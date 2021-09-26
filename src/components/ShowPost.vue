@@ -1,10 +1,14 @@
 <template>
   <div>
-    <ul>
-      <li v-for="post in posts" :key="post.id">
-        {{ post.title }}
-      </li>
-    </ul>
+    <md-content>
+      <ul class="listStyle">
+        <li v-for="post in posts" :key="post.id">
+          {{ post.title }}
+          
+          <md-divider></md-divider>
+        </li>
+      </ul>
+    </md-content>
   </div>
 </template>
 
@@ -18,4 +22,7 @@ export default {
 </script>
 
 <style>
+.listStyle {
+  list-style: none;
+}
 </style>

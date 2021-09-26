@@ -80,6 +80,6 @@ export default {
 
 <style lang="scss" scoped>
 .md-dialog .md-dialog-container {
-  max-width: 768px;
+  max-width: 568px;
 }
 </style>
