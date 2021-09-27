@@ -36,11 +36,12 @@
 </template>
 
 <script>
+import { mapGetters, mapActions } from "vuex";
 import ShowCategory from "./ShowCategory.vue";
 export default {
   name: "Category",
   components: {
-    ShowCategory
+    ShowCategory,
   },
   data() {
     return {
@@ -49,6 +50,9 @@ export default {
       id: "",
       showDialog: false,
     };
+  },
+  computed: {
+    ...mapGetters(['allCategory'])
   },
   methods: {
     addCategory(e) {
