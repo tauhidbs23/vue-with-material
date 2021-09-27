@@ -15,27 +15,25 @@ const actions = {
         console.log('this.is vuex form category ');
     },
 
-    async addCategory({ commit }, name) {
-
-        commit('newCategory', name);
-
+    async addCategory({ commit }, category) {
+        commit('newCategory', category);
     },
     async deleteCategory({ commit }, id) {
-
         commit('removeCategory', id)
-
     },
-    async editCategory({ commit }, name) {
-
-        commit('updateCategory', name);
-
+    async editCategory({ commit }, category) {
+        commit('updateCategory', category);
     }
 }
 
 const mutations = {
     setCategory: (state, category) => (state.category = category),
     newCategory: (state, category) => state.category.unshift(category),
-    removeCategory: (state, id) => (state.category = state.category.filter(category => category.id !== id)),
+    removeCategory: (state, id) => {
+        const index = state.category.findIndex(el => el.id === id);
+        state.category.splice(index, 1);
+        // (state.category = state.category.filter(category => category.id !== id)),
+    },
     updateCategory: (state, updCategory) => {
         const index = state.category.findIndex(category => category.id === updCategory.id)
         if (index !== -1) {

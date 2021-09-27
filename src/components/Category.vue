@@ -1,5 +1,17 @@
 <template>
   <div>
+    <md-content>
+      <div class="md-layout md-gutter post-heading">
+        <div class="md-layout-item">
+          <h3>All Categories</h3>
+        </div>
+        <div class="md-layout-item">
+          <md-button class="md-primary md-raised" @click="showDialog = true"
+            >CREATE CATEGORY</md-button
+          >
+        </div>
+      </div>
+    </md-content>
     <md-dialog :md-active.sync="showDialog">
       <md-dialog-title>
         <span class="md-title">CREATE Category</span>
@@ -18,9 +30,6 @@
       </md-dialog-actions>
     </md-dialog>
 
-    <md-button class="md-primary md-raised" @click="showDialog = true"
-      >CREATE CATEGORY</md-button
-    >
     <!-- here show all the category  -->
     <ShowCategory :category="category" />
   </div>
@@ -31,7 +40,7 @@ import ShowCategory from "./ShowCategory.vue";
 export default {
   name: "Category",
   components: {
-    ShowCategory,
+    ShowCategory
   },
   data() {
     return {
