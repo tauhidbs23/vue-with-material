@@ -15,7 +15,8 @@ const actions = {
         console.log('this.is vuex form category ');
     },
 
-    async addCategory({ commit }, category) {
+    async addCategory2({ commit }, category) {
+        console.log('from vuex', category);
         commit('newCategory', category);
     },
     async deleteCategory({ commit }, id) {

@@ -31,7 +31,7 @@
     </md-dialog>
 
     <!-- here show all the category  -->
-    <ShowCategory :category="category" />
+    <ShowCategory :category="allCategory" />
   </div>
 </template>
 
@@ -52,9 +52,10 @@ export default {
     };
   },
   computed: {
-    ...mapGetters(['allCategory'])
+    ...mapGetters(["allCategory"]),
   },
   methods: {
+    ...mapActions(["addCategory2"]),
     addCategory(e) {
       this.showDialog = false;
 
@@ -64,9 +65,10 @@ export default {
         name: this.name,
       };
       console.log(newCategory);
-      console.log("click add category function");
+      // console.log("click add category function");
 
-      this.category = [...this.category, newCategory];
+      this.addCategory2(newCategory);
+      // this.category = [...this.category, newCategory];
 
       this.name = "";
       this.id = "";

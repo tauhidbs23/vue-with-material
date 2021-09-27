@@ -30,11 +30,12 @@
         >CREATE POST</md-button
       >
     </div>
-    <ShowPost :posts="posts" />
+    <ShowPost :posts="allPost" />
   </div>
 </template>
 
 <script>
+import { mapGetters, mapActions } from "vuex";
 import ShowPost from "./ShowPost.vue";
 export default {
   name: "Post",
@@ -53,7 +54,11 @@ export default {
       },
     };
   },
+  computed: {
+    ...mapGetters(["allPost"]),
+  },
   methods: {
+    ...mapActions(["addPost2"]),
     addPost(e) {
       e.preventDefault();
       this.showDialog = false;
@@ -67,7 +72,9 @@ export default {
 
       console.log(newPost);
 
-      this.posts = [...this.posts, newPost];
+      this.addPost2(newPost);
+
+      // this.posts = [...this.posts, newPost];
 
       this.postDetails.id = "";
       this.postDetails.title = "";

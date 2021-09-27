@@ -9,9 +9,15 @@
         <md-table-row v-for="post in posts" :key="post.id">
           <md-table-cell>{{ post.title }}</md-table-cell>
           <md-table-cell>
-            <span class="material-icons"  @click="openNew(post.id)"> open_in_full </span>
-            <span class="material-icons" @click="editPost1(post.id)"> edit </span>
-            <span class="material-icons" @click="deletePost1(post.id)"> delete </span>
+            <span class="material-icons" @click="openNew(post.id)">
+              open_in_full
+            </span>
+            <span class="material-icons" @click="editPost1(post.id)">
+              edit
+            </span>
+            <span class="material-icons" @click="deletePost1(post.id)">
+              delete
+            </span>
           </md-table-cell>
         </md-table-row>
       </md-table>
@@ -27,7 +33,7 @@ export default {
     posts: Array,
   },
   methods: {
-    ...mapActions(["deletePost"]),
+    ...mapActions(["deletePost", "testPostAction"]),
     deletePost1(id) {
       console.log("delete ", id);
     },

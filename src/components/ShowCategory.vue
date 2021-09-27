@@ -17,13 +17,6 @@
         </md-table-cell>
       </md-table-row>
     </md-table>
-
-    <!-- <p>show all the category</p> -->
-    <!-- <ul>
-      <li v-for="item in category" :key="item.id">
-        {{ item.name }}
-      </li>
-    </ul> -->
   </div>
 </template>
 
@@ -33,15 +26,13 @@ export default {
   props: {
     category: Array,
   },
-  created() {
-    console.log("hi", this.category);
-  },
+  created() {},
   methods: {
     editCategory1(id) {
       console.log("edit category", id);
     },
     deleteCategory1(id) {
-      console.log('delete category',id);
+      console.log("delete category", id);
     },
   },
 };

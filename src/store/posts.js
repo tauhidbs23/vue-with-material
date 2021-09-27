@@ -14,7 +14,7 @@ const actions = {
     testPostAction() {
         console.log('this is vuex form post ');
     },
-    async addPost({ commit }, post) {
+    async addPost2({ commit }, post) {
         commit('newPost', post);
     },
     async deletePost({ commit }, id) {
